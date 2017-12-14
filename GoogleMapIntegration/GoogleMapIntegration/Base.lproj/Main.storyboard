@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5FS-j8-64m">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -41,6 +41,9 @@
                                                     <constraint firstAttribute="height" constant="40" id="7wd-Sq-3GQ"/>
                                                 </constraints>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="AcO-oo-UKi"/>
+                                                </connections>
                                             </searchBar>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -67,7 +70,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="satellite" showsUserLocation="YES" showsPointsOfInterest="NO" showsTraffic="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ktL-cz-Pj4">
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" showsPointsOfInterest="NO" showsTraffic="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ktL-cz-Pj4">
                                         <rect key="frame" x="0.0" y="105" width="375" height="542"/>
                                         <gestureRecognizers/>
                                         <connections>
@@ -137,6 +140,13 @@
                                             <action selector="setCurrentLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HD7-50-QaB"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cMS-0e-97Z">
+                                        <rect key="frame" x="0.0" y="100" width="375" height="375"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="cMS-0e-97Z" secondAttribute="height" multiplier="1:1" id="jFd-tk-exQ"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -145,9 +155,12 @@
                                     <constraint firstAttribute="trailing" secondItem="ktL-cz-Pj4" secondAttribute="trailing" id="9ak-jU-JRQ"/>
                                     <constraint firstItem="bwV-FT-Qvx" firstAttribute="leading" secondItem="0Zu-3I-r3N" secondAttribute="leading" id="H5w-ZN-Qjf"/>
                                     <constraint firstAttribute="trailing" secondItem="id2-kg-Zlo" secondAttribute="trailing" id="ItQ-bm-CJD"/>
+                                    <constraint firstItem="cMS-0e-97Z" firstAttribute="leading" secondItem="0Zu-3I-r3N" secondAttribute="leading" id="JUS-N8-l6J"/>
                                     <constraint firstAttribute="bottom" secondItem="ktL-cz-Pj4" secondAttribute="bottom" id="Po5-7r-0jw"/>
                                     <constraint firstItem="ktL-cz-Pj4" firstAttribute="top" secondItem="id2-kg-Zlo" secondAttribute="bottom" constant="5" id="Xpw-Kh-fef"/>
                                     <constraint firstItem="id2-kg-Zlo" firstAttribute="leading" secondItem="0Zu-3I-r3N" secondAttribute="leading" id="cfc-cs-b62"/>
+                                    <constraint firstItem="cMS-0e-97Z" firstAttribute="top" secondItem="id2-kg-Zlo" secondAttribute="bottom" id="kQo-ok-ezO"/>
+                                    <constraint firstAttribute="trailing" secondItem="cMS-0e-97Z" secondAttribute="trailing" id="mQJ-Ar-Te6"/>
                                     <constraint firstItem="bwV-FT-Qvx" firstAttribute="top" secondItem="ktL-cz-Pj4" secondAttribute="bottom" id="t23-or-Y8o"/>
                                     <constraint firstItem="ktL-cz-Pj4" firstAttribute="leading" secondItem="0Zu-3I-r3N" secondAttribute="leading" id="u63-jF-nJR"/>
                                     <constraint firstItem="bwV-FT-Qvx" firstAttribute="top" secondItem="yFX-Qr-65c" secondAttribute="bottom" constant="20" id="ua4-Pg-PaB"/>
@@ -163,7 +176,9 @@
                             <constraint firstItem="0Zu-3I-r3N" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="xfC-DP-R66"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="snA-au-xwQ"/>
                     <connections>
+                        <outlet property="containerView" destination="cMS-0e-97Z" id="4I1-kn-Oyq"/>
                         <outlet property="locationLabel" destination="oGx-Im-Ebf" id="nIv-aL-5Gc"/>
                         <outlet property="mapView" destination="ktL-cz-Pj4" id="cgk-ZB-fLH"/>
                         <outlet property="myLocationButton" destination="yFX-Qr-65c" id="S3D-Ag-gTo"/>
@@ -177,6 +192,81 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="959" y="36"/>
+        </scene>
+        <!--Search Location Table View Controller-->
+        <scene sceneID="8od-u8-UNd">
+            <objects>
+                <tableViewController storyboardIdentifier="SearchLocationTableViewController" id="AnK-iW-IyG" customClass="SearchLocationTableViewController" customModule="GoogleMapIntegration" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" id="ToM-dr-kBF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" rowHeight="50" id="qDB-gX-ppf" customClass="SearchLocationTableViewCell" customModule="GoogleMapIntegration" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qDB-gX-ppf" id="n8E-Pc-v8a">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yxw-RM-gD1">
+                                            <rect key="frame" x="5" y="0.0" width="365" height="24.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTk-35-PME">
+                                            <rect key="frame" x="5" y="24.5" width="365" height="24.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Yxw-RM-gD1" firstAttribute="top" secondItem="n8E-Pc-v8a" secondAttribute="top" id="8vH-lE-3Rf"/>
+                                        <constraint firstItem="PTk-35-PME" firstAttribute="top" secondItem="Yxw-RM-gD1" secondAttribute="bottom" id="AeJ-6g-c8m"/>
+                                        <constraint firstAttribute="trailing" secondItem="Yxw-RM-gD1" secondAttribute="trailing" constant="5" id="aPd-LC-25z"/>
+                                        <constraint firstAttribute="trailing" secondItem="PTk-35-PME" secondAttribute="trailing" constant="5" id="d52-6r-G1t"/>
+                                        <constraint firstItem="PTk-35-PME" firstAttribute="height" secondItem="Yxw-RM-gD1" secondAttribute="height" id="mGQ-bw-ZCi"/>
+                                        <constraint firstItem="Yxw-RM-gD1" firstAttribute="leading" secondItem="n8E-Pc-v8a" secondAttribute="leading" constant="5" id="owb-D5-f3X"/>
+                                        <constraint firstAttribute="bottom" secondItem="PTk-35-PME" secondAttribute="bottom" id="uWI-QI-xzd"/>
+                                        <constraint firstItem="PTk-35-PME" firstAttribute="leading" secondItem="n8E-Pc-v8a" secondAttribute="leading" constant="5" id="wQz-AJ-aoV"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="locationDetailsLabel" destination="PTk-35-PME" id="sF9-gO-zAK"/>
+                                    <outlet property="locationNameLabel" destination="Yxw-RM-gD1" id="EhQ-7w-SAs"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="AnK-iW-IyG" id="I3d-wc-DbH"/>
+                            <outlet property="delegate" destination="AnK-iW-IyG" id="TQW-Nb-p1b"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BJo-Ry-BY4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="958" y="767"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="T0X-zG-hfZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="5FS-j8-64m" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SCF-Pf-THG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="iJp-0O-3fn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lOU-3o-0fU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="193" y="36"/>
         </scene>
     </scenes>
     <resources>

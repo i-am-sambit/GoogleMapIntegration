@@ -11,7 +11,6 @@ import UIKit
 class GoogleHelperAPI: NSObject {
     
     
-    
     //MARK: post request
     private func postRequest(with url:URL, postBody:NSString, callback: @escaping (Any?) -> Void) -> Void {
         

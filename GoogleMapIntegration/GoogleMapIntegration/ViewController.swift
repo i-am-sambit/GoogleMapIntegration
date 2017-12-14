@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import GooglePlaces
 
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
@@ -20,7 +21,19 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     @IBOutlet weak var locationLabel: UILabel!
     
+    @IBOutlet weak var containerView: UIView!
+    
+    lazy var searchController: SearchLocationTableViewController = {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        var viewController = storyboard.instantiateViewController(withIdentifier: "SearchLocationTableViewController") as! SearchLocationTableViewController
+        self.add(asChildViewController: viewController)
+        return viewController
+    }()
+    
     var locationManager: CLLocationManager = CLLocationManager()
+    
+    var gmsFetcher: GMSAutocompleteFetcher?
     
     private let initialLocation = CLLocation.init(latitude: 21.282778, longitude: -157.829444)
     private let regionRadius: CLLocationDistance = 1000
@@ -37,26 +50,17 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         mapView.userTrackingMode = .follow
         
         centerMapOnLocation(location: initialLocation)
+        
+        gmsFetcher = GMSAutocompleteFetcher()
+        gmsFetcher?.delegate = self
+        
+        add(asChildViewController: searchController)
+        containerView.isHidden = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        /* 
-         * It will check wheather user has given access to use location 
-         * If authorization status is notDetermined then it will request for authorization
-         * If authorization status is denied then it will ask user to go to settings and set on permission
-         * If authorization status is authorizedWhenInUse or authorizedAlways then it will update location
-         */
-        if CLLocationManager.authorizationStatus() == .notDetermined {
-            locationManager.requestAlwaysAuthorization()
-        }
-        else if CLLocationManager.authorizationStatus() == .denied {
-            
-        }
-        else if CLLocationManager.authorizationStatus() == .authorizedWhenInUse || CLLocationManager.authorizationStatus() == .authorizedAlways {
-            startUpdatingLocation()
-        }
+        locationManager.checkLocationAuthorisation()
     }
     
     // MARK: - center map on location
@@ -76,31 +80,16 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
      */
     @IBAction func setCurrentLocation(_ sender: UIButton) {
         
-        if CLLocationManager.locationServicesEnabled() {
+        locationManager.setUserLocation()
+        
+        UIView.animateKeyframes(withDuration: 0.5, delay: 0, options: .beginFromCurrentState, animations: {
             
-            if locationManager.responds(to: #selector(CLLocationManager.requestAlwaysAuthorization)) {
-                locationManager.requestAlwaysAuthorization()
-                
-                UIView.animateKeyframes(withDuration: 0.5, delay: 0, options: .beginFromCurrentState, animations: {
-                    
-                    self.placeInformationView.frame = CGRect(x: 0, y: self.view.frame.size.height - self.placeInformationView.frame.size.height - 20, width: self.placeInformationView.frame.size.width, height: self.placeInformationView.frame.size.height)
-                    
-                    self.myLocationButton.frame = CGRect(x: self.myLocationButton.frame.origin.x, y: (self.placeInformationView.frame.origin.y - self.myLocationButton.frame.size.height - 20), width: self.myLocationButton.frame.size.width, height: self.myLocationButton.frame.size.height)
-                }, completion: { (completed: Bool) in
-                    
-                })
-            }
-            else {
-                
-            }
-            startUpdatingLocation()
-        }
-    }
-    
-    
-    // MARK: - start updating location
-    func startUpdatingLocation() {
-        locationManager.startUpdatingLocation()
+            self.placeInformationView.frame = CGRect(x: 0, y: self.view.frame.size.height - self.placeInformationView.frame.size.height - 20, width: self.placeInformationView.frame.size.width, height: self.placeInformationView.frame.size.height)
+            
+            self.myLocationButton.frame = CGRect(x: self.myLocationButton.frame.origin.x, y: (self.placeInformationView.frame.origin.y - self.myLocationButton.frame.size.height - 20), width: self.myLocationButton.frame.size.width, height: self.myLocationButton.frame.size.height)
+        }, completion: { (completed: Bool) in
+            
+        })
     }
     
     
@@ -112,31 +101,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         let touchPoint = sender.location(in: self.mapView)
         let locationCoordinate: CLLocationCoordinate2D = self.mapView.convert(touchPoint, toCoordinateFrom: self.mapView)
-        getCityName(locationCoordinate: locationCoordinate)
-    }
-    
-    func getCityName(locationCoordinate: CLLocationCoordinate2D) -> Void {
-        
-        let location: CLLocation = CLLocation(latitude: locationCoordinate.latitude, longitude: locationCoordinate.longitude)
-        let geoCoder = CLGeocoder()
-        
-        geoCoder.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) in
-            
-            for placemark in placemarks! {
-                
-                guard let address = placemark.addressDictionary else { return }
-                
-                print(address)
-                
-                guard let locality = placemark.locality else { return }
-                
-                guard let subLocality = placemark.subLocality else { return }
-                
-                guard let name = placemark.name else { return }
-                
-                self.locationLabel.text = "\(locality), \(subLocality), \(name)"
-            }
-        })
+        self.mapView.getLocationDetails(locationCoordinate: locationCoordinate) { (locationDetails) in
+            self.locationLabel.text = locationDetails
+        }
     }
     
     
@@ -153,9 +120,42 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         self.mapView.setRegion(region, animated: true)
     }
     
+    func add(asChildViewController viewController: UIViewController) {
+        
+        addChildViewController(viewController)
+        containerView.addSubview(viewController.view)
+        viewController.view.frame = containerView.bounds
+        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        viewController.didMove(toParentViewController: self)
+    }
+    
+    func remove(asChildViewController viewController: UIViewController) {
+        
+        viewController.willMove(toParentViewController: nil)
+        viewController.view.removeFromSuperview()
+        viewController.removeFromParentViewController()
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+}
+
+extension ViewController: UISearchBarDelegate, GMSAutocompleteFetcherDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        gmsFetcher?.sourceTextHasChanged(searchText)
+    }
+    
+    func didAutocomplete(with predictions: [GMSAutocompletePrediction]) {
+        let array = predictions
+        searchController.locations = array
+        containerView.isHidden = false
+    }
+    
+    func didFailAutocompleteWithError(_ error: Error) {
+        
     }
 }
 

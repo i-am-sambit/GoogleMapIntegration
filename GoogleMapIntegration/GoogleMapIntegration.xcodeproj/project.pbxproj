@@ -19,6 +19,10 @@
 		CD79EAC21FE0F74A0020DC65 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD79EAC11FE0F74A0020DC65 /* MapKit.framework */; };
 		CD79EAC41FE0FB550020DC65 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD79EAC31FE0FB550020DC65 /* CoreLocation.framework */; };
 		CD79EAC71FE12F120020DC65 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD79EAC61FE12F120020DC65 /* Config.swift */; };
+		CDA03BD21FE29F9A0006E79A /* SearchLocationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA03BD11FE29F9A0006E79A /* SearchLocationTableViewController.swift */; };
+		CDA4B1131FE23C74005F6F6A /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA4B1121FE23C74005F6F6A /* MapManager.swift */; };
+		CDA4B1161FE23F84005F6F6A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA4B1151FE23F84005F6F6A /* LocationManager.swift */; };
+		CDA4B1241FE2924F005F6F6A /* SearchLocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA4B1221FE2924F005F6F6A /* SearchLocationTableViewCell.swift */; };
 		D9A58FB4D70AFF1C1CB67CA0 /* Pods_GoogleMapIntegrationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A689293FC02229B56DF77032 /* Pods_GoogleMapIntegrationTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +57,10 @@
 		CD79EAC11FE0F74A0020DC65 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CD79EAC31FE0FB550020DC65 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		CD79EAC61FE12F120020DC65 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		CDA03BD11FE29F9A0006E79A /* SearchLocationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchLocationTableViewController.swift; sourceTree = "<group>"; };
+		CDA4B1121FE23C74005F6F6A /* MapManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
+		CDA4B1151FE23F84005F6F6A /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		CDA4B1221FE2924F005F6F6A /* SearchLocationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchLocationTableViewCell.swift; sourceTree = "<group>"; };
 		CE6973BF21CB7B9959F62EFD /* Pods-GoogleMapIntegration.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleMapIntegration.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoogleMapIntegration/Pods-GoogleMapIntegration.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,7 +146,8 @@
 		CD79EAB91FE0EB000020DC65 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				CD79EA981FE0EACB0020DC65 /* ViewController.swift */,
+				CDA4B1261FE295F6005F6F6A /* SearchLocation TableView */,
+				CDA4B11D1FE2900E005F6F6A /* Home */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -146,6 +155,7 @@
 		CD79EABA1FE0EB100020DC65 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CDA4B11E1FE291FD005F6F6A /* Tableview Cells */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -153,7 +163,9 @@
 		CD79EABB1FE0EB180020DC65 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CD79EABC1FE0EB420020DC65 /* GoogleHelperAPI.swift */,
+				CDA4B1171FE24351005F6F6A /* Google Helper API */,
+				CDA4B1141FE23F72005F6F6A /* LocationManager */,
+				CDA4B1111FE23C31005F6F6A /* MapManager */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -175,6 +187,62 @@
 				CD79EAC61FE12F120020DC65 /* Config.swift */,
 			);
 			name = Config;
+			sourceTree = "<group>";
+		};
+		CDA4B1111FE23C31005F6F6A /* MapManager */ = {
+			isa = PBXGroup;
+			children = (
+				CDA4B1121FE23C74005F6F6A /* MapManager.swift */,
+			);
+			name = MapManager;
+			sourceTree = "<group>";
+		};
+		CDA4B1141FE23F72005F6F6A /* LocationManager */ = {
+			isa = PBXGroup;
+			children = (
+				CDA4B1151FE23F84005F6F6A /* LocationManager.swift */,
+			);
+			name = LocationManager;
+			sourceTree = "<group>";
+		};
+		CDA4B1171FE24351005F6F6A /* Google Helper API */ = {
+			isa = PBXGroup;
+			children = (
+				CD79EABC1FE0EB420020DC65 /* GoogleHelperAPI.swift */,
+			);
+			name = "Google Helper API";
+			sourceTree = "<group>";
+		};
+		CDA4B11D1FE2900E005F6F6A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CD79EA981FE0EACB0020DC65 /* ViewController.swift */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		CDA4B11E1FE291FD005F6F6A /* Tableview Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CDA4B11F1FE2920F005F6F6A /* SearchTableviewCells */,
+			);
+			name = "Tableview Cells";
+			sourceTree = "<group>";
+		};
+		CDA4B11F1FE2920F005F6F6A /* SearchTableviewCells */ = {
+			isa = PBXGroup;
+			children = (
+				CDA4B1221FE2924F005F6F6A /* SearchLocationTableViewCell.swift */,
+			);
+			name = SearchTableviewCells;
+			sourceTree = "<group>";
+		};
+		CDA4B1261FE295F6005F6F6A /* SearchLocation TableView */ = {
+			isa = PBXGroup;
+			children = (
+				CDA03BD11FE29F9A0006E79A /* SearchLocationTableViewController.swift */,
+			);
+			name = "SearchLocation TableView";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -384,7 +452,11 @@
 				CD79EA991FE0EACB0020DC65 /* ViewController.swift in Sources */,
 				CD79EA9F1FE0EACB0020DC65 /* GoogleMapIntegration.xcdatamodeld in Sources */,
 				CD79EAC71FE12F120020DC65 /* Config.swift in Sources */,
+				CDA4B1241FE2924F005F6F6A /* SearchLocationTableViewCell.swift in Sources */,
+				CDA4B1161FE23F84005F6F6A /* LocationManager.swift in Sources */,
 				CD79EA971FE0EACB0020DC65 /* AppDelegate.swift in Sources */,
+				CDA03BD21FE29F9A0006E79A /* SearchLocationTableViewController.swift in Sources */,
+				CDA4B1131FE23C74005F6F6A /* MapManager.swift in Sources */,
 				CD79EABD1FE0EB420020DC65 /* GoogleHelperAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -599,6 +671,7 @@
 				CD79EAB51FE0EACC0020DC65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CD79EAB61FE0EACC0020DC65 /* Build configuration list for PBXNativeTarget "GoogleMapIntegrationTests" */ = {
 			isa = XCConfigurationList;
@@ -607,6 +680,7 @@
 				CD79EAB81FE0EACC0020DC65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

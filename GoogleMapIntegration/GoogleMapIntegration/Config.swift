@@ -10,7 +10,6 @@ import UIKit
 
 class Config: NSObject {
     
-    static var googlePlaceApiKey = " AIzaSyAL2afYJa7RwR6oO55yxa8BiQLM-JLfLCM "
-    
+    static var googlePlaceApiKey = " AIzaSyAL2afYJa7RwR6oO55yxa8BiQLM-JLfLCM"
     
 }
