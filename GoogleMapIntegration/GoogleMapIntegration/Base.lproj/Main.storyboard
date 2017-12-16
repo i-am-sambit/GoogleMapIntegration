@@ -141,11 +141,8 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cMS-0e-97Z">
-                                        <rect key="frame" x="0.0" y="100" width="375" height="375"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="cMS-0e-97Z" secondAttribute="height" multiplier="1:1" id="jFd-tk-exQ"/>
-                                        </constraints>
+                                        <rect key="frame" x="0.0" y="100" width="375" height="547"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -165,6 +162,7 @@
                                     <constraint firstItem="ktL-cz-Pj4" firstAttribute="leading" secondItem="0Zu-3I-r3N" secondAttribute="leading" id="u63-jF-nJR"/>
                                     <constraint firstItem="bwV-FT-Qvx" firstAttribute="top" secondItem="yFX-Qr-65c" secondAttribute="bottom" constant="20" id="ua4-Pg-PaB"/>
                                     <constraint firstAttribute="trailing" secondItem="bwV-FT-Qvx" secondAttribute="trailing" id="vmo-Ms-qOq"/>
+                                    <constraint firstItem="bwV-FT-Qvx" firstAttribute="top" secondItem="cMS-0e-97Z" secondAttribute="bottom" id="yfh-kT-JF6"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -192,46 +190,53 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="959" y="36"/>
+            <point key="canvasLocation" x="957.60000000000002" y="35.532233883058474"/>
         </scene>
         <!--Search Location Table View Controller-->
         <scene sceneID="8od-u8-UNd">
             <objects>
                 <tableViewController storyboardIdentifier="SearchLocationTableViewController" id="AnK-iW-IyG" customClass="SearchLocationTableViewController" customModule="GoogleMapIntegration" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" id="ToM-dr-kBF">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" id="ToM-dr-kBF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="knO-vp-MJD">
+                            <rect key="frame" x="0.0" y="68" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" rowHeight="50" id="qDB-gX-ppf" customClass="SearchLocationTableViewCell" customModule="GoogleMapIntegration" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="50"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="reuseIdentifier" rowHeight="40" id="qDB-gX-ppf" customClass="SearchLocationTableViewCell" customModule="GoogleMapIntegration" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="40"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qDB-gX-ppf" id="n8E-Pc-v8a">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="39.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yxw-RM-gD1">
-                                            <rect key="frame" x="5" y="0.0" width="365" height="24.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <rect key="frame" x="10" y="5" width="355" height="15"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTk-35-PME">
-                                            <rect key="frame" x="5" y="24.5" width="365" height="24.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTk-35-PME">
+                                            <rect key="frame" x="10" y="25" width="355" height="14.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Yxw-RM-gD1" firstAttribute="top" secondItem="n8E-Pc-v8a" secondAttribute="top" id="8vH-lE-3Rf"/>
-                                        <constraint firstItem="PTk-35-PME" firstAttribute="top" secondItem="Yxw-RM-gD1" secondAttribute="bottom" id="AeJ-6g-c8m"/>
-                                        <constraint firstAttribute="trailing" secondItem="Yxw-RM-gD1" secondAttribute="trailing" constant="5" id="aPd-LC-25z"/>
-                                        <constraint firstAttribute="trailing" secondItem="PTk-35-PME" secondAttribute="trailing" constant="5" id="d52-6r-G1t"/>
+                                        <constraint firstItem="Yxw-RM-gD1" firstAttribute="top" secondItem="n8E-Pc-v8a" secondAttribute="top" constant="5" id="8vH-lE-3Rf"/>
+                                        <constraint firstItem="PTk-35-PME" firstAttribute="top" secondItem="Yxw-RM-gD1" secondAttribute="bottom" constant="5" id="AeJ-6g-c8m"/>
+                                        <constraint firstItem="PTk-35-PME" firstAttribute="leading" secondItem="Yxw-RM-gD1" secondAttribute="leading" id="Drq-7U-pIb"/>
+                                        <constraint firstAttribute="trailing" secondItem="Yxw-RM-gD1" secondAttribute="trailing" constant="10" id="aPd-LC-25z"/>
+                                        <constraint firstItem="PTk-35-PME" firstAttribute="trailing" secondItem="Yxw-RM-gD1" secondAttribute="trailing" id="c2f-AU-BLC"/>
                                         <constraint firstItem="PTk-35-PME" firstAttribute="height" secondItem="Yxw-RM-gD1" secondAttribute="height" id="mGQ-bw-ZCi"/>
-                                        <constraint firstItem="Yxw-RM-gD1" firstAttribute="leading" secondItem="n8E-Pc-v8a" secondAttribute="leading" constant="5" id="owb-D5-f3X"/>
+                                        <constraint firstItem="Yxw-RM-gD1" firstAttribute="leading" secondItem="n8E-Pc-v8a" secondAttribute="leading" constant="10" id="owb-D5-f3X"/>
                                         <constraint firstAttribute="bottom" secondItem="PTk-35-PME" secondAttribute="bottom" id="uWI-QI-xzd"/>
-                                        <constraint firstItem="PTk-35-PME" firstAttribute="leading" secondItem="n8E-Pc-v8a" secondAttribute="leading" constant="5" id="wQz-AJ-aoV"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

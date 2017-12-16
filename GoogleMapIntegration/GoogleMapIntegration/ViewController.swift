@@ -9,9 +9,10 @@
 import UIKit
 import MapKit
 import CoreLocation
+import GoogleMaps
 import GooglePlaces
 
-class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     
@@ -23,17 +24,18 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     @IBOutlet weak var containerView: UIView!
     
-    lazy var searchController: SearchLocationTableViewController = {
+    var searchController: SearchLocationTableViewController = {
         
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         var viewController = storyboard.instantiateViewController(withIdentifier: "SearchLocationTableViewController") as! SearchLocationTableViewController
-        self.add(asChildViewController: viewController)
         return viewController
     }()
     
     var locationManager: CLLocationManager = CLLocationManager()
     
     var gmsFetcher: GMSAutocompleteFetcher?
+    
+    var locationMarker: GMSMarker!
     
     private let initialLocation = CLLocation.init(latitude: 21.282778, longitude: -157.829444)
     private let regionRadius: CLLocationDistance = 1000
@@ -54,6 +56,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         gmsFetcher = GMSAutocompleteFetcher()
         gmsFetcher?.delegate = self
         
+        searchController.delegate = self
         add(asChildViewController: searchController)
         containerView.isHidden = true
     }
@@ -69,6 +72,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
      */
     func centerMapOnLocation(location: CLLocation) -> Void {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius, regionRadius)
+        setuplocationMarker(coordinate: location.coordinate)
         mapView.setRegion(coordinateRegion, animated: true)
     }
     
@@ -81,15 +85,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     @IBAction func setCurrentLocation(_ sender: UIButton) {
         
         locationManager.setUserLocation()
-        
-        UIView.animateKeyframes(withDuration: 0.5, delay: 0, options: .beginFromCurrentState, animations: {
-            
-            self.placeInformationView.frame = CGRect(x: 0, y: self.view.frame.size.height - self.placeInformationView.frame.size.height - 20, width: self.placeInformationView.frame.size.width, height: self.placeInformationView.frame.size.height)
-            
-            self.myLocationButton.frame = CGRect(x: self.myLocationButton.frame.origin.x, y: (self.placeInformationView.frame.origin.y - self.myLocationButton.frame.size.height - 20), width: self.myLocationButton.frame.size.width, height: self.myLocationButton.frame.size.height)
-        }, completion: { (completed: Bool) in
-            
-        })
+        showPlaceDetailsView()
     }
     
     
@@ -104,6 +100,25 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         self.mapView.getLocationDetails(locationCoordinate: locationCoordinate) { (locationDetails) in
             self.locationLabel.text = locationDetails
         }
+    }
+    
+    func showPlaceDetailsView() -> Void {
+        UIView.animateKeyframes(withDuration: 0.5, delay: 0, options: .beginFromCurrentState, animations: {
+            
+            self.placeInformationView.frame = CGRect(x: 0, y: self.view.frame.size.height - self.placeInformationView.frame.size.height - 20, width: self.placeInformationView.frame.size.width, height: self.placeInformationView.frame.size.height)
+            
+            self.myLocationButton.frame = CGRect(x: self.myLocationButton.frame.origin.x, y: (self.placeInformationView.frame.origin.y - self.myLocationButton.frame.size.height - 20), width: self.myLocationButton.frame.size.width, height: self.myLocationButton.frame.size.height)
+        }, completion: { (completed: Bool) in
+            
+        })
+    }
+    
+    func setuplocationMarker(coordinate: CLLocationCoordinate2D) {
+        
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = coordinate
+        annotation.title = "My Location"
+        mapView.addAnnotation(annotation)
     }
     
     
@@ -136,9 +151,39 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         viewController.removeFromParentViewController()
     }
     
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+}
+
+extension ViewController: MKMapViewDelegate {
+    
+    func mapViewDidFinishLoadingMap(_ mapView: MKMapView) {
+        
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard !(annotation is MKUserLocation) else {
+            return nil
+        }
+        
+        let annotationIdentifier = "Identifier"
+        var annotationView: MKAnnotationView?
+        if let dequeuedAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationIdentifier) {
+            annotationView = dequeuedAnnotationView
+            annotationView?.annotation = annotation
+        }
+        else {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
+            annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+        }
+        
+        if let annotationView = annotationView {
+            
+            annotationView.canShowCallout = true
+            annotationView.image = UIImage(named: "LocationPin")
+        }
+        return annotationView
     }
 }
 
@@ -149,13 +194,34 @@ extension ViewController: UISearchBarDelegate, GMSAutocompleteFetcherDelegate {
     }
     
     func didAutocomplete(with predictions: [GMSAutocompletePrediction]) {
-        let array = predictions
-        searchController.locations = array
+        
+        searchController.locations = predictions
+        searchController.tableView.reloadData()
         containerView.isHidden = false
     }
     
     func didFailAutocompleteWithError(_ error: Error) {
         
+    }
+}
+
+extension ViewController: SearchLocationDelegate {
+    
+    func selectedUserLocation(location: GMSAutocompletePrediction) {
+        
+        self.containerView.isHidden = true
+        self.locationLabel.text = location.attributedFullText.string
+        showPlaceDetailsView()
+        
+        GMSPlacesClient().getPlaceDetailsFromPlaceId(placeID: location.placeID!) { (place, error) in
+            
+            guard let placeDetails = place else {
+                return
+            }
+            
+            self.centerMapOnLocation(location: placeDetails.object(forKey: "coordinates") as! CLLocation)
+            self.setuplocationMarker(coordinate: (placeDetails.object(forKey: "coordinates") as! CLLocation).coordinate)
+        }
     }
 }
 
