@@ -1,0 +1,989 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		34A3B64C3296BAD8648CE27F /* Pods_GenieflowTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F09B4D91725EA32DD5E037D /* Pods_GenieflowTestUITests.framework */; };
+		B845B1BBEB12A5F33CA5D971 /* Pods_GenieflowTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1DA0542FC54580B1E7A5D20 /* Pods_GenieflowTest.framework */; };
+		BDC2E2591FE548FF00A56010 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC2E2581FE548FF00A56010 /* AppDelegate.swift */; };
+		BDC2E25E1FE548FF00A56010 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDC2E25C1FE548FF00A56010 /* Main.storyboard */; };
+		BDC2E2611FE548FF00A56010 /* GenieflowTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BDC2E25F1FE548FF00A56010 /* GenieflowTest.xcdatamodeld */; };
+		BDC2E2631FE548FF00A56010 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDC2E2621FE548FF00A56010 /* Assets.xcassets */; };
+		BDC2E2661FE548FF00A56010 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDC2E2641FE548FF00A56010 /* LaunchScreen.storyboard */; };
+		BDC2E2711FE548FF00A56010 /* GenieflowTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC2E2701FE548FF00A56010 /* GenieflowTestTests.swift */; };
+		BDC2E27C1FE548FF00A56010 /* GenieflowTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC2E27B1FE548FF00A56010 /* GenieflowTestUITests.swift */; };
+		BDC2E2901FE54C2D00A56010 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC2E28F1FE54C2D00A56010 /* ViewController.swift */; };
+		BDC2E2921FE54C6300A56010 /* SearchLocationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC2E2911FE54C6300A56010 /* SearchLocationTableViewController.swift */; };
+		BDC2E2961FE54CD400A56010 /* SearchLocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC2E2951FE54CD400A56010 /* SearchLocationTableViewCell.swift */; };
+		BDC2E2981FE54CFD00A56010 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC2E2971FE54CFD00A56010 /* Config.swift */; };
+		BDC2E2A11FE54D7E00A56010 /* PlaceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC2E2A01FE54D7E00A56010 /* PlaceManager.swift */; };
+		BDC2E2A31FE54D9600A56010 /* GoogleHelperAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC2E2A21FE54D9600A56010 /* GoogleHelperAPI.swift */; };
+		BDC2E2A51FE54DB000A56010 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC2E2A41FE54DB000A56010 /* LocationManager.swift */; };
+		BDC2E2A71FE54DC100A56010 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC2E2A61FE54DC100A56010 /* MapManager.swift */; };
+		BDC2E2B11FE5500300A56010 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDC2E2B01FE5500300A56010 /* Accelerate.framework */; };
+		BDC2E2B31FE5501800A56010 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDC2E2B21FE5501800A56010 /* CoreData.framework */; };
+		BDC2E2B51FE5502300A56010 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDC2E2B41FE5502300A56010 /* CoreGraphics.framework */; };
+		BDC2E2B71FE5503400A56010 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDC2E2B61FE5503400A56010 /* CoreLocation.framework */; };
+		BDC2E2B91FE5504400A56010 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDC2E2B81FE5504400A56010 /* CoreTelephony.framework */; };
+		BDC2E2BB1FE5506100A56010 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDC2E2BA1FE5506100A56010 /* ImageIO.framework */; };
+		BDC2E2BD1FE550E700A56010 /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC2E2BC1FE550E700A56010 /* ErrorManager.swift */; };
+		BDC2E2C21FE56F1600A56010 /* PickupAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC2E2C11FE56F1600A56010 /* PickupAddressViewController.swift */; };
+		BDD79E991FE63125008F860B /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD79E981FE63125008F860B /* Singleton.swift */; };
+		BDD79E9C1FE650DF008F860B /* DropLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD79E9B1FE650DF008F860B /* DropLocationViewController.swift */; };
+		CDB94D4D1FE7CDD100F9AF4F /* ViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB94D4C1FE7CDD100F9AF4F /* ViewManager.swift */; };
+		CDB94D501FE7D0A500F9AF4F /* DropLocationAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB94D4F1FE7D0A500F9AF4F /* DropLocationAddressViewController.swift */; };
+		FFAF4A134D7ACCF46FD62DEB /* Pods_GenieflowTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1074E064B2B8FE4B3C45514C /* Pods_GenieflowTestTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BDC2E26D1FE548FF00A56010 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BDC2E24D1FE548FF00A56010 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BDC2E2541FE548FF00A56010;
+			remoteInfo = GenieflowTest;
+		};
+		BDC2E2781FE548FF00A56010 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BDC2E24D1FE548FF00A56010 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BDC2E2541FE548FF00A56010;
+			remoteInfo = GenieflowTest;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1074E064B2B8FE4B3C45514C /* Pods_GenieflowTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GenieflowTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		19E22A7E3B679EC43F8B28BC /* Pods-GenieflowTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GenieflowTestTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GenieflowTestTests/Pods-GenieflowTestTests.debug.xcconfig"; sourceTree = "<group>"; };
+		29DAE47E532E363DA3E3F025 /* Pods-GenieflowTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GenieflowTestUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GenieflowTestUITests/Pods-GenieflowTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2B65AD810BE8DFF6E09E7EC7 /* Pods-GenieflowTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GenieflowTestTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GenieflowTestTests/Pods-GenieflowTestTests.release.xcconfig"; sourceTree = "<group>"; };
+		7548D5EFF55FF67A82EED5D9 /* Pods-GenieflowTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GenieflowTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GenieflowTest/Pods-GenieflowTest.debug.xcconfig"; sourceTree = "<group>"; };
+		76F1D28D18B3557A42E83B58 /* Pods-GenieflowTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GenieflowTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-GenieflowTest/Pods-GenieflowTest.release.xcconfig"; sourceTree = "<group>"; };
+		7F09B4D91725EA32DD5E037D /* Pods_GenieflowTestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GenieflowTestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A70057F2F79717C02573F2B6 /* Pods-GenieflowTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GenieflowTestUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GenieflowTestUITests/Pods-GenieflowTestUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BDC2E2551FE548FF00A56010 /* GenieflowTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GenieflowTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDC2E2581FE548FF00A56010 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BDC2E25D1FE548FF00A56010 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BDC2E2601FE548FF00A56010 /* GenieflowTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GenieflowTest.xcdatamodel; sourceTree = "<group>"; };
+		BDC2E2621FE548FF00A56010 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BDC2E2651FE548FF00A56010 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BDC2E2671FE548FF00A56010 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDC2E26C1FE548FF00A56010 /* GenieflowTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GenieflowTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDC2E2701FE548FF00A56010 /* GenieflowTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenieflowTestTests.swift; sourceTree = "<group>"; };
+		BDC2E2721FE548FF00A56010 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDC2E2771FE548FF00A56010 /* GenieflowTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GenieflowTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDC2E27B1FE548FF00A56010 /* GenieflowTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenieflowTestUITests.swift; sourceTree = "<group>"; };
+		BDC2E27D1FE548FF00A56010 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDC2E28F1FE54C2D00A56010 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BDC2E2911FE54C6300A56010 /* SearchLocationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchLocationTableViewController.swift; sourceTree = "<group>"; };
+		BDC2E2951FE54CD400A56010 /* SearchLocationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchLocationTableViewCell.swift; sourceTree = "<group>"; };
+		BDC2E2971FE54CFD00A56010 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		BDC2E2A01FE54D7E00A56010 /* PlaceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceManager.swift; sourceTree = "<group>"; };
+		BDC2E2A21FE54D9600A56010 /* GoogleHelperAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleHelperAPI.swift; sourceTree = "<group>"; };
+		BDC2E2A41FE54DB000A56010 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		BDC2E2A61FE54DC100A56010 /* MapManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
+		BDC2E2B01FE5500300A56010 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		BDC2E2B21FE5501800A56010 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		BDC2E2B41FE5502300A56010 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		BDC2E2B61FE5503400A56010 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		BDC2E2B81FE5504400A56010 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		BDC2E2BA1FE5506100A56010 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		BDC2E2BC1FE550E700A56010 /* ErrorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
+		BDC2E2C11FE56F1600A56010 /* PickupAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickupAddressViewController.swift; sourceTree = "<group>"; };
+		BDD79E981FE63125008F860B /* Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
+		BDD79E9B1FE650DF008F860B /* DropLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropLocationViewController.swift; sourceTree = "<group>"; };
+		CDB94D4C1FE7CDD100F9AF4F /* ViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewManager.swift; sourceTree = "<group>"; };
+		CDB94D4F1FE7D0A500F9AF4F /* DropLocationAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropLocationAddressViewController.swift; sourceTree = "<group>"; };
+		E1DA0542FC54580B1E7A5D20 /* Pods_GenieflowTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GenieflowTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BDC2E2521FE548FF00A56010 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDC2E2BB1FE5506100A56010 /* ImageIO.framework in Frameworks */,
+				BDC2E2B91FE5504400A56010 /* CoreTelephony.framework in Frameworks */,
+				BDC2E2B71FE5503400A56010 /* CoreLocation.framework in Frameworks */,
+				BDC2E2B51FE5502300A56010 /* CoreGraphics.framework in Frameworks */,
+				BDC2E2B31FE5501800A56010 /* CoreData.framework in Frameworks */,
+				BDC2E2B11FE5500300A56010 /* Accelerate.framework in Frameworks */,
+				B845B1BBEB12A5F33CA5D971 /* Pods_GenieflowTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDC2E2691FE548FF00A56010 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFAF4A134D7ACCF46FD62DEB /* Pods_GenieflowTestTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDC2E2741FE548FF00A56010 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34A3B64C3296BAD8648CE27F /* Pods_GenieflowTestUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A436B3368DF2FACDA7275D82 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7548D5EFF55FF67A82EED5D9 /* Pods-GenieflowTest.debug.xcconfig */,
+				76F1D28D18B3557A42E83B58 /* Pods-GenieflowTest.release.xcconfig */,
+				19E22A7E3B679EC43F8B28BC /* Pods-GenieflowTestTests.debug.xcconfig */,
+				2B65AD810BE8DFF6E09E7EC7 /* Pods-GenieflowTestTests.release.xcconfig */,
+				29DAE47E532E363DA3E3F025 /* Pods-GenieflowTestUITests.debug.xcconfig */,
+				A70057F2F79717C02573F2B6 /* Pods-GenieflowTestUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BDC2E24C1FE548FF00A56010 = {
+			isa = PBXGroup;
+			children = (
+				BDC2E2571FE548FF00A56010 /* GenieflowTest */,
+				BDC2E26F1FE548FF00A56010 /* GenieflowTestTests */,
+				BDC2E27A1FE548FF00A56010 /* GenieflowTestUITests */,
+				BDC2E2561FE548FF00A56010 /* Products */,
+				BDC2E2AF1FE5500300A56010 /* Frameworks */,
+				A436B3368DF2FACDA7275D82 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		BDC2E2561FE548FF00A56010 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BDC2E2551FE548FF00A56010 /* GenieflowTest.app */,
+				BDC2E26C1FE548FF00A56010 /* GenieflowTestTests.xctest */,
+				BDC2E2771FE548FF00A56010 /* GenieflowTestUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BDC2E2571FE548FF00A56010 /* GenieflowTest */ = {
+			isa = PBXGroup;
+			children = (
+				BDC2E2A81FE54F2C00A56010 /* Framework */,
+				BDC2E28C1FE5495200A56010 /* Config */,
+				BDC2E28B1FE5493900A56010 /* Model */,
+				BDC2E28A1FE5491A00A56010 /* Views */,
+				BDC2E2891FE5491000A56010 /* Controllers */,
+				BDC2E2581FE548FF00A56010 /* AppDelegate.swift */,
+				BDC2E25C1FE548FF00A56010 /* Main.storyboard */,
+				BDC2E2621FE548FF00A56010 /* Assets.xcassets */,
+				BDC2E2641FE548FF00A56010 /* LaunchScreen.storyboard */,
+				BDC2E2671FE548FF00A56010 /* Info.plist */,
+				BDC2E25F1FE548FF00A56010 /* GenieflowTest.xcdatamodeld */,
+			);
+			path = GenieflowTest;
+			sourceTree = "<group>";
+		};
+		BDC2E26F1FE548FF00A56010 /* GenieflowTestTests */ = {
+			isa = PBXGroup;
+			children = (
+				BDC2E2701FE548FF00A56010 /* GenieflowTestTests.swift */,
+				BDC2E2721FE548FF00A56010 /* Info.plist */,
+			);
+			path = GenieflowTestTests;
+			sourceTree = "<group>";
+		};
+		BDC2E27A1FE548FF00A56010 /* GenieflowTestUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BDC2E27B1FE548FF00A56010 /* GenieflowTestUITests.swift */,
+				BDC2E27D1FE548FF00A56010 /* Info.plist */,
+			);
+			path = GenieflowTestUITests;
+			sourceTree = "<group>";
+		};
+		BDC2E2891FE5491000A56010 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CDB94D4E1FE7D05600F9AF4F /* Drop Location Address */,
+				BDD79E9A1FE650B4008F860B /* Drop Location Map */,
+				BDC2E2C01FE56DD000A56010 /* Pickup Addreess */,
+				BDC2E28E1FE54BF000A56010 /* Search Location */,
+				BDC2E28D1FE54BE600A56010 /* Home */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		BDC2E28A1FE5491A00A56010 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BDC2E2931FE54C7C00A56010 /* TableView Cells */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		BDC2E28B1FE5493900A56010 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CDB94D4B1FE7CDAC00F9AF4F /* ViewManager */,
+				BDD79E971FE630EF008F860B /* Singleton */,
+				BDC2E29D1FE54D4200A56010 /* Error Manager */,
+				BDC2E29C1FE54D3700A56010 /* Place Manager */,
+				BDC2E29B1FE54D2700A56010 /* Google Helper API */,
+				BDC2E29A1FE54D1400A56010 /* LocationManager */,
+				BDC2E2991FE54D0300A56010 /* MapManager */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		BDC2E28C1FE5495200A56010 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				BDC2E2971FE54CFD00A56010 /* Config.swift */,
+			);
+			name = Config;
+			sourceTree = "<group>";
+		};
+		BDC2E28D1FE54BE600A56010 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BDC2E28F1FE54C2D00A56010 /* ViewController.swift */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		BDC2E28E1FE54BF000A56010 /* Search Location */ = {
+			isa = PBXGroup;
+			children = (
+				BDC2E2911FE54C6300A56010 /* SearchLocationTableViewController.swift */,
+			);
+			name = "Search Location";
+			sourceTree = "<group>";
+		};
+		BDC2E2931FE54C7C00A56010 /* TableView Cells */ = {
+			isa = PBXGroup;
+			children = (
+				BDC2E2941FE54C9000A56010 /* SearchTableviewCells */,
+			);
+			name = "TableView Cells";
+			sourceTree = "<group>";
+		};
+		BDC2E2941FE54C9000A56010 /* SearchTableviewCells */ = {
+			isa = PBXGroup;
+			children = (
+				BDC2E2951FE54CD400A56010 /* SearchLocationTableViewCell.swift */,
+			);
+			name = SearchTableviewCells;
+			sourceTree = "<group>";
+		};
+		BDC2E2991FE54D0300A56010 /* MapManager */ = {
+			isa = PBXGroup;
+			children = (
+				BDC2E2A61FE54DC100A56010 /* MapManager.swift */,
+			);
+			name = MapManager;
+			sourceTree = "<group>";
+		};
+		BDC2E29A1FE54D1400A56010 /* LocationManager */ = {
+			isa = PBXGroup;
+			children = (
+				BDC2E2A41FE54DB000A56010 /* LocationManager.swift */,
+			);
+			name = LocationManager;
+			sourceTree = "<group>";
+		};
+		BDC2E29B1FE54D2700A56010 /* Google Helper API */ = {
+			isa = PBXGroup;
+			children = (
+				BDC2E2A21FE54D9600A56010 /* GoogleHelperAPI.swift */,
+			);
+			name = "Google Helper API";
+			sourceTree = "<group>";
+		};
+		BDC2E29C1FE54D3700A56010 /* Place Manager */ = {
+			isa = PBXGroup;
+			children = (
+				BDC2E2A01FE54D7E00A56010 /* PlaceManager.swift */,
+			);
+			name = "Place Manager";
+			sourceTree = "<group>";
+		};
+		BDC2E29D1FE54D4200A56010 /* Error Manager */ = {
+			isa = PBXGroup;
+			children = (
+				BDC2E2BC1FE550E700A56010 /* ErrorManager.swift */,
+			);
+			name = "Error Manager";
+			sourceTree = "<group>";
+		};
+		BDC2E2A81FE54F2C00A56010 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Framework;
+			sourceTree = "<group>";
+		};
+		BDC2E2AF1FE5500300A56010 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BDC2E2BA1FE5506100A56010 /* ImageIO.framework */,
+				BDC2E2B81FE5504400A56010 /* CoreTelephony.framework */,
+				BDC2E2B61FE5503400A56010 /* CoreLocation.framework */,
+				BDC2E2B41FE5502300A56010 /* CoreGraphics.framework */,
+				BDC2E2B21FE5501800A56010 /* CoreData.framework */,
+				BDC2E2B01FE5500300A56010 /* Accelerate.framework */,
+				E1DA0542FC54580B1E7A5D20 /* Pods_GenieflowTest.framework */,
+				1074E064B2B8FE4B3C45514C /* Pods_GenieflowTestTests.framework */,
+				7F09B4D91725EA32DD5E037D /* Pods_GenieflowTestUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BDC2E2C01FE56DD000A56010 /* Pickup Addreess */ = {
+			isa = PBXGroup;
+			children = (
+				BDC2E2C11FE56F1600A56010 /* PickupAddressViewController.swift */,
+			);
+			name = "Pickup Addreess";
+			sourceTree = "<group>";
+		};
+		BDD79E971FE630EF008F860B /* Singleton */ = {
+			isa = PBXGroup;
+			children = (
+				BDD79E981FE63125008F860B /* Singleton.swift */,
+			);
+			name = Singleton;
+			sourceTree = "<group>";
+		};
+		BDD79E9A1FE650B4008F860B /* Drop Location Map */ = {
+			isa = PBXGroup;
+			children = (
+				BDD79E9B1FE650DF008F860B /* DropLocationViewController.swift */,
+			);
+			name = "Drop Location Map";
+			sourceTree = "<group>";
+		};
+		CDB94D4B1FE7CDAC00F9AF4F /* ViewManager */ = {
+			isa = PBXGroup;
+			children = (
+				CDB94D4C1FE7CDD100F9AF4F /* ViewManager.swift */,
+			);
+			name = ViewManager;
+			sourceTree = "<group>";
+		};
+		CDB94D4E1FE7D05600F9AF4F /* Drop Location Address */ = {
+			isa = PBXGroup;
+			children = (
+				CDB94D4F1FE7D0A500F9AF4F /* DropLocationAddressViewController.swift */,
+			);
+			name = "Drop Location Address";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BDC2E2541FE548FF00A56010 /* GenieflowTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BDC2E2801FE548FF00A56010 /* Build configuration list for PBXNativeTarget "GenieflowTest" */;
+			buildPhases = (
+				EFA08147DED15EA125217F06 /* [CP] Check Pods Manifest.lock */,
+				BDC2E2511FE548FF00A56010 /* Sources */,
+				BDC2E2521FE548FF00A56010 /* Frameworks */,
+				BDC2E2531FE548FF00A56010 /* Resources */,
+				76A8E58D388700929DB6783C /* [CP] Embed Pods Frameworks */,
+				228AB8F562E273F6DCE993F1 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GenieflowTest;
+			productName = GenieflowTest;
+			productReference = BDC2E2551FE548FF00A56010 /* GenieflowTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BDC2E26B1FE548FF00A56010 /* GenieflowTestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BDC2E2831FE548FF00A56010 /* Build configuration list for PBXNativeTarget "GenieflowTestTests" */;
+			buildPhases = (
+				C4ED60B496ECE78B6500F0F1 /* [CP] Check Pods Manifest.lock */,
+				BDC2E2681FE548FF00A56010 /* Sources */,
+				BDC2E2691FE548FF00A56010 /* Frameworks */,
+				BDC2E26A1FE548FF00A56010 /* Resources */,
+				1454065CBCAA51B9315D7F81 /* [CP] Embed Pods Frameworks */,
+				F90F6FA7699752DB19CF4E02 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BDC2E26E1FE548FF00A56010 /* PBXTargetDependency */,
+			);
+			name = GenieflowTestTests;
+			productName = GenieflowTestTests;
+			productReference = BDC2E26C1FE548FF00A56010 /* GenieflowTestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BDC2E2761FE548FF00A56010 /* GenieflowTestUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BDC2E2861FE548FF00A56010 /* Build configuration list for PBXNativeTarget "GenieflowTestUITests" */;
+			buildPhases = (
+				E1A2C5E352B78878E1AF36FE /* [CP] Check Pods Manifest.lock */,
+				BDC2E2731FE548FF00A56010 /* Sources */,
+				BDC2E2741FE548FF00A56010 /* Frameworks */,
+				BDC2E2751FE548FF00A56010 /* Resources */,
+				72E08F8D183580E0F54B8BBD /* [CP] Embed Pods Frameworks */,
+				8D24B86A2594AA5A53A0676A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BDC2E2791FE548FF00A56010 /* PBXTargetDependency */,
+			);
+			name = GenieflowTestUITests;
+			productName = GenieflowTestUITests;
+			productReference = BDC2E2771FE548FF00A56010 /* GenieflowTestUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BDC2E24D1FE548FF00A56010 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = SambitPrakash;
+				TargetAttributes = {
+					BDC2E2541FE548FF00A56010 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					BDC2E26B1FE548FF00A56010 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BDC2E2541FE548FF00A56010;
+					};
+					BDC2E2761FE548FF00A56010 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BDC2E2541FE548FF00A56010;
+					};
+				};
+			};
+			buildConfigurationList = BDC2E2501FE548FF00A56010 /* Build configuration list for PBXProject "GenieflowTest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BDC2E24C1FE548FF00A56010;
+			productRefGroup = BDC2E2561FE548FF00A56010 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BDC2E2541FE548FF00A56010 /* GenieflowTest */,
+				BDC2E26B1FE548FF00A56010 /* GenieflowTestTests */,
+				BDC2E2761FE548FF00A56010 /* GenieflowTestUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BDC2E2531FE548FF00A56010 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDC2E2661FE548FF00A56010 /* LaunchScreen.storyboard in Resources */,
+				BDC2E2631FE548FF00A56010 /* Assets.xcassets in Resources */,
+				BDC2E25E1FE548FF00A56010 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDC2E26A1FE548FF00A56010 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDC2E2751FE548FF00A56010 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1454065CBCAA51B9315D7F81 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GenieflowTestTests/Pods-GenieflowTestTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		228AB8F562E273F6DCE993F1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GenieflowTest/Pods-GenieflowTest-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlacePicker/Frameworks/GooglePlacePicker.framework/Resources/GooglePlacePicker.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GenieflowTest/Pods-GenieflowTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		72E08F8D183580E0F54B8BBD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GenieflowTestUITests/Pods-GenieflowTestUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		76A8E58D388700929DB6783C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GenieflowTest/Pods-GenieflowTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D24B86A2594AA5A53A0676A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GenieflowTestUITests/Pods-GenieflowTestUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C4ED60B496ECE78B6500F0F1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GenieflowTestTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E1A2C5E352B78878E1AF36FE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GenieflowTestUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EFA08147DED15EA125217F06 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GenieflowTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F90F6FA7699752DB19CF4E02 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GenieflowTestTests/Pods-GenieflowTestTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BDC2E2511FE548FF00A56010 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDC2E2921FE54C6300A56010 /* SearchLocationTableViewController.swift in Sources */,
+				BDC2E2901FE54C2D00A56010 /* ViewController.swift in Sources */,
+				BDC2E2A51FE54DB000A56010 /* LocationManager.swift in Sources */,
+				BDC2E2611FE548FF00A56010 /* GenieflowTest.xcdatamodeld in Sources */,
+				BDD79E9C1FE650DF008F860B /* DropLocationViewController.swift in Sources */,
+				CDB94D501FE7D0A500F9AF4F /* DropLocationAddressViewController.swift in Sources */,
+				BDC2E2BD1FE550E700A56010 /* ErrorManager.swift in Sources */,
+				BDD79E991FE63125008F860B /* Singleton.swift in Sources */,
+				BDC2E2A71FE54DC100A56010 /* MapManager.swift in Sources */,
+				BDC2E2961FE54CD400A56010 /* SearchLocationTableViewCell.swift in Sources */,
+				BDC2E2C21FE56F1600A56010 /* PickupAddressViewController.swift in Sources */,
+				BDC2E2A31FE54D9600A56010 /* GoogleHelperAPI.swift in Sources */,
+				BDC2E2A11FE54D7E00A56010 /* PlaceManager.swift in Sources */,
+				CDB94D4D1FE7CDD100F9AF4F /* ViewManager.swift in Sources */,
+				BDC2E2591FE548FF00A56010 /* AppDelegate.swift in Sources */,
+				BDC2E2981FE54CFD00A56010 /* Config.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDC2E2681FE548FF00A56010 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDC2E2711FE548FF00A56010 /* GenieflowTestTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDC2E2731FE548FF00A56010 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDC2E27C1FE548FF00A56010 /* GenieflowTestUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BDC2E26E1FE548FF00A56010 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BDC2E2541FE548FF00A56010 /* GenieflowTest */;
+			targetProxy = BDC2E26D1FE548FF00A56010 /* PBXContainerItemProxy */;
+		};
+		BDC2E2791FE548FF00A56010 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BDC2E2541FE548FF00A56010 /* GenieflowTest */;
+			targetProxy = BDC2E2781FE548FF00A56010 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BDC2E25C1FE548FF00A56010 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BDC2E25D1FE548FF00A56010 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BDC2E2641FE548FF00A56010 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BDC2E2651FE548FF00A56010 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BDC2E27E1FE548FF00A56010 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BDC2E27F1FE548FF00A56010 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BDC2E2811FE548FF00A56010 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7548D5EFF55FF67A82EED5D9 /* Pods-GenieflowTest.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GenieflowTest",
+				);
+				INFOPLIST_FILE = GenieflowTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = SambitPrakash.GenieflowTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		BDC2E2821FE548FF00A56010 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76F1D28D18B3557A42E83B58 /* Pods-GenieflowTest.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GenieflowTest",
+				);
+				INFOPLIST_FILE = GenieflowTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = SambitPrakash.GenieflowTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		BDC2E2841FE548FF00A56010 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19E22A7E3B679EC43F8B28BC /* Pods-GenieflowTestTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GenieflowTestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = SambitPrakash.GenieflowTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GenieflowTest.app/GenieflowTest";
+			};
+			name = Debug;
+		};
+		BDC2E2851FE548FF00A56010 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B65AD810BE8DFF6E09E7EC7 /* Pods-GenieflowTestTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GenieflowTestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = SambitPrakash.GenieflowTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GenieflowTest.app/GenieflowTest";
+			};
+			name = Release;
+		};
+		BDC2E2871FE548FF00A56010 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29DAE47E532E363DA3E3F025 /* Pods-GenieflowTestUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = GenieflowTestUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = SambitPrakash.GenieflowTestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = GenieflowTest;
+			};
+			name = Debug;
+		};
+		BDC2E2881FE548FF00A56010 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A70057F2F79717C02573F2B6 /* Pods-GenieflowTestUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = GenieflowTestUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = SambitPrakash.GenieflowTestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = GenieflowTest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BDC2E2501FE548FF00A56010 /* Build configuration list for PBXProject "GenieflowTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDC2E27E1FE548FF00A56010 /* Debug */,
+				BDC2E27F1FE548FF00A56010 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BDC2E2801FE548FF00A56010 /* Build configuration list for PBXNativeTarget "GenieflowTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDC2E2811FE548FF00A56010 /* Debug */,
+				BDC2E2821FE548FF00A56010 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BDC2E2831FE548FF00A56010 /* Build configuration list for PBXNativeTarget "GenieflowTestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDC2E2841FE548FF00A56010 /* Debug */,
+				BDC2E2851FE548FF00A56010 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BDC2E2861FE548FF00A56010 /* Build configuration list for PBXNativeTarget "GenieflowTestUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BDC2E2871FE548FF00A56010 /* Debug */,
+				BDC2E2881FE548FF00A56010 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BDC2E25F1FE548FF00A56010 /* GenieflowTest.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BDC2E2601FE548FF00A56010 /* GenieflowTest.xcdatamodel */,
+			);
+			currentVersion = BDC2E2601FE548FF00A56010 /* GenieflowTest.xcdatamodel */;
+			path = GenieflowTest.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = BDC2E24D1FE548FF00A56010 /* Project object */;
+}

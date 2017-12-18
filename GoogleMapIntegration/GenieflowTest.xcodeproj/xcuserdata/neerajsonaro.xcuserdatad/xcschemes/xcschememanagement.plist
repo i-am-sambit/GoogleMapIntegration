@@ -4,35 +4,25 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-GenieflowTest.xcscheme</key>
+		<key>GenieflowTest.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
-		</dict>
-		<key>Pods-GenieflowTestTests.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
-		</dict>
-		<key>Pods-GenieflowTestUITests.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>0</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>34436139AB18334411147D3D2818F5E2</key>
+		<key>BDC2E2541FE548FF00A56010</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B79A1C54D951BD6511824B962F207B03</key>
+		<key>BDC2E26B1FE548FF00A56010</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>ED42C97FAD79E2EC4D0D6CE93706A527</key>
+		<key>BDC2E2761FE548FF00A56010</key>
 		<dict>
 			<key>primary</key>
 			<true/>
