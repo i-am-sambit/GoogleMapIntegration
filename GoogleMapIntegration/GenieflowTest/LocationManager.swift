@@ -8,7 +8,7 @@
 
 import Foundation
 import CoreLocation
-
+import UIKit
 
 extension CLLocationManager {
     
@@ -25,7 +25,7 @@ extension CLLocationManager {
             self.requestAlwaysAuthorization()
         }
         else if CLLocationManager.authorizationStatus() == .denied {
-            
+            UIAlertView(title: "Location Not Enable", message: "GinieflowTest does not have permission to get location. Please enable location in settings panel", delegate: nil, cancelButtonTitle: "Okay").show()
         }
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse || CLLocationManager.authorizationStatus() == .authorizedAlways {
             updatingLocation()
@@ -40,7 +40,7 @@ extension CLLocationManager {
             updatingLocation()
         }
         else {
-            
+            UIAlertView(title: "Location Not Enable", message: "GinieflowTest does not have permission to get location. Please enable location in settings panel", delegate: nil, cancelButtonTitle: "Okay").show()
         }
     }
     

@@ -34,6 +34,7 @@
 		BDC2E2C21FE56F1600A56010 /* PickupAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC2E2C11FE56F1600A56010 /* PickupAddressViewController.swift */; };
 		BDD79E991FE63125008F860B /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD79E981FE63125008F860B /* Singleton.swift */; };
 		BDD79E9C1FE650DF008F860B /* DropLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD79E9B1FE650DF008F860B /* DropLocationViewController.swift */; };
+		CD7E156B1FE8D5DC00F81239 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7E156A1FE8D5DC00F81239 /* GradientView.swift */; };
 		CDB94D4D1FE7CDD100F9AF4F /* ViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB94D4C1FE7CDD100F9AF4F /* ViewManager.swift */; };
 		CDB94D501FE7D0A500F9AF4F /* DropLocationAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB94D4F1FE7D0A500F9AF4F /* DropLocationAddressViewController.swift */; };
 		FFAF4A134D7ACCF46FD62DEB /* Pods_GenieflowTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1074E064B2B8FE4B3C45514C /* Pods_GenieflowTestTests.framework */; };
@@ -96,6 +97,7 @@
 		BDC2E2C11FE56F1600A56010 /* PickupAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickupAddressViewController.swift; sourceTree = "<group>"; };
 		BDD79E981FE63125008F860B /* Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		BDD79E9B1FE650DF008F860B /* DropLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropLocationViewController.swift; sourceTree = "<group>"; };
+		CD7E156A1FE8D5DC00F81239 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		CDB94D4C1FE7CDD100F9AF4F /* ViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewManager.swift; sourceTree = "<group>"; };
 		CDB94D4F1FE7D0A500F9AF4F /* DropLocationAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropLocationAddressViewController.swift; sourceTree = "<group>"; };
 		E1DA0542FC54580B1E7A5D20 /* Pods_GenieflowTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GenieflowTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -221,6 +223,7 @@
 		BDC2E28A1FE5491A00A56010 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CD7E15691FE8D5CB00F81239 /* Gradient View */,
 				BDC2E2931FE54C7C00A56010 /* TableView Cells */,
 			);
 			name = Views;
@@ -365,6 +368,14 @@
 				BDD79E9B1FE650DF008F860B /* DropLocationViewController.swift */,
 			);
 			name = "Drop Location Map";
+			sourceTree = "<group>";
+		};
+		CD7E15691FE8D5CB00F81239 /* Gradient View */ = {
+			isa = PBXGroup;
+			children = (
+				CD7E156A1FE8D5DC00F81239 /* GradientView.swift */,
+			);
+			name = "Gradient View";
 			sourceTree = "<group>";
 		};
 		CDB94D4B1FE7CDAC00F9AF4F /* ViewManager */ = {
@@ -683,6 +694,7 @@
 				BDC2E2A51FE54DB000A56010 /* LocationManager.swift in Sources */,
 				BDC2E2611FE548FF00A56010 /* GenieflowTest.xcdatamodeld in Sources */,
 				BDD79E9C1FE650DF008F860B /* DropLocationViewController.swift in Sources */,
+				CD7E156B1FE8D5DC00F81239 /* GradientView.swift in Sources */,
 				CDB94D501FE7D0A500F9AF4F /* DropLocationAddressViewController.swift in Sources */,
 				BDC2E2BD1FE550E700A56010 /* ErrorManager.swift in Sources */,
 				BDD79E991FE63125008F860B /* Singleton.swift in Sources */,

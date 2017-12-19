@@ -31,7 +31,6 @@ extension GMSPlacesClient {
             print("Place placeID \(place.placeID)")
             print("Place attributions \(String(describing: place.attributions))")
             print(place.coordinate)
-//            complitionHandler("\(place.name), \(place.formattedAddress ?? "")", nil)
             
             let placeDetails: NSDictionary = ["name": place.name, "address" : place.formattedAddress ?? "", "coordinates": CLLocation(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)]
             complitionHandler(placeDetails, nil)

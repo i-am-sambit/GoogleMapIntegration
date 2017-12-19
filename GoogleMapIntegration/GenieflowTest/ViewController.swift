@@ -121,6 +121,9 @@ extension ViewController: CLLocationManagerDelegate {
         let coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         self.mapView.getLocationDetails(locationCoordinate: coordinate) { (name, subLocality, locality) in
             
+            let placeDetails: NSDictionary = ["name": name!, "address" : "\(subLocality!), \(locality!)", "coordinates": CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)]
+            self.placeDetails = placeDetails as? [String : Any]
+            
             self.locationLabel.text = "\(name!), \(subLocality!), \(locality!)"
             self.mapView.showMarker(coordinate: coordinate, placeName: name!, placeAddress: "\(subLocality!), \(locality!)")
             self.showPlaceDetailsView()
@@ -140,6 +143,9 @@ extension ViewController: GMSMapViewDelegate {
         
         self.mapView.getLocationDetails(locationCoordinate: coordinate) { (name, subLocality, locality) in
             
+            let placeDetails: NSDictionary = ["name": name!, "address" : "\(subLocality!), \(locality!)", "coordinates": CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)]
+            self.placeDetails = placeDetails as? [String : Any]
+            
             self.locationLabel.text = "\(name!), \(subLocality!), \(locality!)"
             self.mapView.showMarker(coordinate: coordinate, placeName: name!, placeAddress: "\(subLocality!), \(locality!)")
             self.showPlaceDetailsView()
@@ -154,6 +160,10 @@ extension ViewController: UISearchBarDelegate, GMSAutocompleteFetcherDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
     }
     
@@ -186,6 +196,7 @@ extension ViewController: SearchLocationDelegate {
             self.locationLabel.text = "\(placeDetails.object(forKey: "name") as! String) \(placeDetails.object(forKey: "address") as! String)"
             self.mapView.showMarker(coordinate: (placeDetails.object(forKey: "coordinates") as! CLLocation).coordinate, placeName: placeDetails.object(forKey: "name") as! String , placeAddress: placeDetails.object(forKey: "address") as! String)
             self.showPlaceDetailsView()
+            self.locationManager.stopUpdatingLocation()
         }
     }
 }

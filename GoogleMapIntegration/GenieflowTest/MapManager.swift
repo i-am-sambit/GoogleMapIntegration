@@ -53,13 +53,21 @@ extension GMSMapView {
                 
                 print(address)
                 
-                guard let locality = placemark.locality else { return }
+                guard let name = placemark.name else {
+                    complitionHandler("", "", "")
+                    return
+                }
                 
-                guard let subLocality = placemark.subLocality else { return }
+                guard let subLocality = placemark.subLocality else {
+                    complitionHandler(name, "", "")
+                    return
+                }
                 
-                guard let name = placemark.name else { return }
+                guard let locality = placemark.locality else {
+                    complitionHandler(name, subLocality, "")
+                    return
+                }
                 
-//                let locationDetails = "\(name), \(subLocality), \(locality)"
                 complitionHandler(name, subLocality, locality)
             }
         })

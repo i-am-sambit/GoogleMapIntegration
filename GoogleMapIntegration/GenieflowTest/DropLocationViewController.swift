@@ -65,6 +65,10 @@ class DropLocationViewController: UIViewController {
         containerView.isHidden = true
     }
     
+    @IBAction func backAction(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func setUserLocationAction(_ sender: UIButton) {
         locationManager.setUserLocation()
     }
@@ -101,6 +105,9 @@ extension DropLocationViewController: GMSMapViewDelegate {
         
         self.mapView.getLocationDetails(locationCoordinate: coordinate) { (name, subLocality, locality) in
             
+            let placeDetails: NSDictionary = ["name": name!, "address" : "\(subLocality!), \(locality!)", "coordinates": CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)]
+            self.placeDetails = placeDetails as? [String : Any]
+            
             self.dropLocationLabel.text = "\(name!), \(subLocality!), \(locality!)"
             self.mapView.showMarker(coordinate: coordinate, placeName: name!, placeAddress: "\(subLocality!), \(locality!)")
             self.showPlaceDetailsView()
@@ -115,6 +122,10 @@ extension DropLocationViewController: UISearchBarDelegate, GMSAutocompleteFetche
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
     }
     
@@ -139,6 +150,9 @@ extension DropLocationViewController: CLLocationManagerDelegate {
         let location = locations.last! as CLLocation
         let coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
         self.mapView.getLocationDetails(locationCoordinate: coordinate) { (name, subLocality, locality) in
+            
+            let placeDetails: NSDictionary = ["name": name!, "address" : "\(subLocality!), \(locality!)", "coordinates": CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)]
+            self.placeDetails = placeDetails as? [String : Any]
             
             self.dropLocationLabel.text = "\(name!), \(subLocality!), \(locality!)"
             self.mapView.showMarker(coordinate: coordinate, placeName: name!, placeAddress: "\(subLocality!), \(locality!)")
@@ -172,6 +186,7 @@ extension DropLocationViewController: SearchLocationDelegate {
             self.mapView.showMarker(coordinate: (placeDetails.object(forKey: "coordinates") as! CLLocation).coordinate, placeName: placeDetails.object(forKey: "name") as! String , placeAddress: placeDetails.object(forKey: "address") as! String)
             
             self.showPlaceDetailsView()
+            self.locationManager.stopUpdatingLocation()
         }
     }
 }
