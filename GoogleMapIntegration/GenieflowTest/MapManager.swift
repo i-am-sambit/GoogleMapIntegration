@@ -22,13 +22,10 @@ extension MKMapView {
             for placemark in placemarks! {
                 
                 guard let address = placemark.addressDictionary else { return }
-                
                 print(address)
                 
                 guard let locality = placemark.locality else { return }
-                
                 guard let subLocality = placemark.subLocality else { return }
-                
                 guard let name = placemark.name else { return }
                 
                 let locationDetails = "\(locality), \(subLocality), \(name)"
@@ -40,6 +37,11 @@ extension MKMapView {
 
 extension GMSMapView {
     
+    // MARK: - get location details
+    /**
+     * it will retrive get location details from geo coordinate
+     * by using reverse Geocode Location
+     */
     func getLocationDetails(locationCoordinate: CLLocationCoordinate2D, complitionHandler: @escaping (String?, String?, String?) -> Void) -> Void {
         
         let location: CLLocation = CLLocation(latitude: locationCoordinate.latitude, longitude: locationCoordinate.longitude)
@@ -50,9 +52,9 @@ extension GMSMapView {
             for placemark in placemarks! {
                 
                 guard let address = placemark.addressDictionary else { return }
-                
                 print(address)
                 
+                // MARK: - name
                 guard let name = placemark.name else {
                     complitionHandler("", "", "")
                     return

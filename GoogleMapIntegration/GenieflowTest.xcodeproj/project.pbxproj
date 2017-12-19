@@ -34,6 +34,16 @@
 		BDC2E2C21FE56F1600A56010 /* PickupAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC2E2C11FE56F1600A56010 /* PickupAddressViewController.swift */; };
 		BDD79E991FE63125008F860B /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD79E981FE63125008F860B /* Singleton.swift */; };
 		BDD79E9C1FE650DF008F860B /* DropLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD79E9B1FE650DF008F860B /* DropLocationViewController.swift */; };
+		CD2665491FE928310059A3BD /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD26653F1FE928310059A3BD /* OpenSans-Bold.ttf */; };
+		CD26654A1FE928310059A3BD /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD2665401FE928310059A3BD /* OpenSans-BoldItalic.ttf */; };
+		CD26654B1FE928310059A3BD /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD2665411FE928310059A3BD /* OpenSans-ExtraBold.ttf */; };
+		CD26654C1FE928310059A3BD /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD2665421FE928310059A3BD /* OpenSans-ExtraBoldItalic.ttf */; };
+		CD26654D1FE928310059A3BD /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD2665431FE928310059A3BD /* OpenSans-Italic.ttf */; };
+		CD26654E1FE928310059A3BD /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD2665441FE928310059A3BD /* OpenSans-Light.ttf */; };
+		CD26654F1FE928310059A3BD /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD2665451FE928310059A3BD /* OpenSans-LightItalic.ttf */; };
+		CD2665501FE928310059A3BD /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD2665461FE928310059A3BD /* OpenSans-Regular.ttf */; };
+		CD2665511FE928310059A3BD /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD2665471FE928310059A3BD /* OpenSans-Semibold.ttf */; };
+		CD2665521FE928310059A3BD /* OpenSans-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD2665481FE928310059A3BD /* OpenSans-SemiboldItalic.ttf */; };
 		CD7E156B1FE8D5DC00F81239 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7E156A1FE8D5DC00F81239 /* GradientView.swift */; };
 		CDB94D4D1FE7CDD100F9AF4F /* ViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB94D4C1FE7CDD100F9AF4F /* ViewManager.swift */; };
 		CDB94D501FE7D0A500F9AF4F /* DropLocationAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB94D4F1FE7D0A500F9AF4F /* DropLocationAddressViewController.swift */; };
@@ -97,6 +107,16 @@
 		BDC2E2C11FE56F1600A56010 /* PickupAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickupAddressViewController.swift; sourceTree = "<group>"; };
 		BDD79E981FE63125008F860B /* Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		BDD79E9B1FE650DF008F860B /* DropLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropLocationViewController.swift; sourceTree = "<group>"; };
+		CD26653F1FE928310059A3BD /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		CD2665401FE928310059A3BD /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		CD2665411FE928310059A3BD /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		CD2665421FE928310059A3BD /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		CD2665431FE928310059A3BD /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		CD2665441FE928310059A3BD /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		CD2665451FE928310059A3BD /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		CD2665461FE928310059A3BD /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		CD2665471FE928310059A3BD /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
+		CD2665481FE928310059A3BD /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
 		CD7E156A1FE8D5DC00F81239 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		CDB94D4C1FE7CDD100F9AF4F /* ViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewManager.swift; sourceTree = "<group>"; };
 		CDB94D4F1FE7D0A500F9AF4F /* DropLocationAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropLocationAddressViewController.swift; sourceTree = "<group>"; };
@@ -175,6 +195,7 @@
 		BDC2E2571FE548FF00A56010 /* GenieflowTest */ = {
 			isa = PBXGroup;
 			children = (
+				CD26653D1FE9280A0059A3BD /* Assets */,
 				BDC2E2A81FE54F2C00A56010 /* Framework */,
 				BDC2E28C1FE5495200A56010 /* Config */,
 				BDC2E28B1FE5493900A56010 /* Model */,
@@ -370,6 +391,31 @@
 			name = "Drop Location Map";
 			sourceTree = "<group>";
 		};
+		CD26653D1FE9280A0059A3BD /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				CD26653E1FE928160059A3BD /* Fonts */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		CD26653E1FE928160059A3BD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CD26653F1FE928310059A3BD /* OpenSans-Bold.ttf */,
+				CD2665401FE928310059A3BD /* OpenSans-BoldItalic.ttf */,
+				CD2665411FE928310059A3BD /* OpenSans-ExtraBold.ttf */,
+				CD2665421FE928310059A3BD /* OpenSans-ExtraBoldItalic.ttf */,
+				CD2665431FE928310059A3BD /* OpenSans-Italic.ttf */,
+				CD2665441FE928310059A3BD /* OpenSans-Light.ttf */,
+				CD2665451FE928310059A3BD /* OpenSans-LightItalic.ttf */,
+				CD2665461FE928310059A3BD /* OpenSans-Regular.ttf */,
+				CD2665471FE928310059A3BD /* OpenSans-Semibold.ttf */,
+				CD2665481FE928310059A3BD /* OpenSans-SemiboldItalic.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		CD7E15691FE8D5CB00F81239 /* Gradient View */ = {
 			isa = PBXGroup;
 			children = (
@@ -510,9 +556,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD2665511FE928310059A3BD /* OpenSans-Semibold.ttf in Resources */,
+				CD2665521FE928310059A3BD /* OpenSans-SemiboldItalic.ttf in Resources */,
 				BDC2E2661FE548FF00A56010 /* LaunchScreen.storyboard in Resources */,
+				CD2665501FE928310059A3BD /* OpenSans-Regular.ttf in Resources */,
+				CD26654D1FE928310059A3BD /* OpenSans-Italic.ttf in Resources */,
+				CD26654C1FE928310059A3BD /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				BDC2E2631FE548FF00A56010 /* Assets.xcassets in Resources */,
+				CD26654F1FE928310059A3BD /* OpenSans-LightItalic.ttf in Resources */,
+				CD2665491FE928310059A3BD /* OpenSans-Bold.ttf in Resources */,
 				BDC2E25E1FE548FF00A56010 /* Main.storyboard in Resources */,
+				CD26654E1FE928310059A3BD /* OpenSans-Light.ttf in Resources */,
+				CD26654A1FE928310059A3BD /* OpenSans-BoldItalic.ttf in Resources */,
+				CD26654B1FE928310059A3BD /* OpenSans-ExtraBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

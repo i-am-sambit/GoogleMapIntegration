@@ -21,7 +21,6 @@ extension GMSPlacesClient {
             }
             
             guard let place = place else {
-                print("No place details for \(placeID)")
                 complitionHandler(nil, NSError.noPlaceFound(placeId: placeID))
                 return
             }

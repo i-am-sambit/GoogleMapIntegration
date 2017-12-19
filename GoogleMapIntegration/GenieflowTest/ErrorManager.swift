@@ -15,6 +15,6 @@ extension NSError {
     }
     
     class func noPlaceFound(placeId: String) -> NSError {
-        return NSError.init(domain: Config.localErrorDomain, code: 404, userInfo: [NSLocalizedDescriptionKey: "No Place found for \(placeId)"])
+        return NSError.init(domain: Config.localErrorDomain, code: 400, userInfo: [NSLocalizedDescriptionKey: "No Place found for \(placeId)"])
     }
 }

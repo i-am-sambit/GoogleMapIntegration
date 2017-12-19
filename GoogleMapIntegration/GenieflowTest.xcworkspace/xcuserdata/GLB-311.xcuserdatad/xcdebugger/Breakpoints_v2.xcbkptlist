@@ -4,22 +4,6 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "GenieflowTest/MapManager.swift"
-            timestampString = "535284194.031242"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "getLocationDetails(locationCoordinate:complitionHandler:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "Yes"
@@ -35,13 +19,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "GenieflowTest/LocationManager.swift"
-            timestampString = "535361805.918983"
+            filePath = "GenieflowTest/MapManager.swift"
+            timestampString = "535384854.0228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "setUserLocation()"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "getLocationDetails(locationCoordinate:complitionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
